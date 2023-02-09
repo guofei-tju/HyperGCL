@@ -54,7 +54,7 @@ $ python main.py --train yeast --output ./output/ --create_negative True --balan
 
 <kbd>output</kbd> specifies the path to store the model.
 
-<kbd>create_negative</kbd> specifies whether to create negative samples based on different conditions. If ```create_negative=False```, the model will run on the default train, valid, and test data, and when ```create_negative=Ture```, you need to set other parameters to create negative samples. 
+<kbd>create_negative</kbd> specifies whether to create negative samples based on different conditions. If <kbd>False</kbd>, the model will run on the default train, valid, and test data, and when <kbd>True</kbd>, you need to set other parameters to create negative samples. 
 
 <kbd>balanced</kbd> specifies whether to replace metabolic based on balanced atom number.
 
