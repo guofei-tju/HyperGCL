@@ -50,7 +50,7 @@ If you want to run our model based on different creating negative samples strate
 $ python main.py --train yeast --output ./output/ --create_negative True --balanced True --atom_ratio 0.5 --negative_ratio 2
 ```
 
-<kbd>train</kbd> specifies the training dataset (For example, ```yeast``, ```uspto_3k``,  ```iMM904```, and so on).
+<kbd>train</kbd> specifies the training dataset (For example, ```yeast```, ```uspto_3k```,  ```iMM904```, and so on).
 
 <kbd>output</kbd> specifies the path to store the model.
 
