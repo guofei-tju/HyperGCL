@@ -62,5 +62,5 @@ $ python main.py --train yeast --output ./output/ --create_negative True --balan
 
 <kbd>negative_ratio</kbd> specifies the ratio of negative reaction samples.
 
-Use the command <code> python main.py -h <code>to check the meaning of other parameters.
+Use the command <code> python main.py -h </code>to check the meaning of other parameters.
 
