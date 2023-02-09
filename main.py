@@ -5,7 +5,7 @@ import config
 import pandas as pd
 import numpy as np
 import copy
-from HyperRXN import HyperRXN
+from CLOSEgaps import CLOSEgaps
 from tqdm import tqdm
 from sklearn.metrics import f1_score, recall_score, precision_score, roc_auc_score, average_precision_score
 
@@ -25,7 +25,7 @@ def train(args, X_smiles, train_incidence_pos, incidence_train, incidence_valid,
     X_similarity_t = getGipKernel(X_smiles_t, False, args.g_lambda)
 
     node_num, hyper_num = incidence_train.shape
-    model = HyperRXN(input_num=node_num, input_feature_num=train_incidence_pos.shape[1],
+    model = CLOSEgaps(input_num=node_num, input_feature_num=train_incidence_pos.shape[1],
                      similarity=X_similarity_t, emb_dim=args.emb_dim, conv_dim=args.conv_dim,
                      head=args.head, p=args.p, L=args.L,
                      use_attention=True)
