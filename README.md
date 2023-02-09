@@ -73,7 +73,7 @@ The folder ```data/pools``` contains a reaction pool under name ```universe.xml`
 
 The folder ```data/fermentation``` contains two files for GEM simulations. For each pair of input and gap-filled GEMs, our algorithm simulates their fermentation phenotypes and, if the phenotype is positive in the gap-filled GEM but negative in the input GEM, we identify and output the minimum number of reactions among the top candidates that allow the phenotypic change. The file substrate_exchange_reactions.csv contains a list of fermentation compounds that we will search for missing phenotypes in the input GEMs. The file requires at least two columns, including a column compound to specify the conventional compound names (e.g., sucrose) and a column named by ```NAMESPACE``` in the ```input_parameters.txt``` to specify the compound IDs (e.g., sucr) in the GEMs. To use your own list of fermentation compounds, remember to rename it to ```substrate_exchange_reactions.csv```. Additionally, the file media.csv specifies the culture medium used to simulate the GEMs. This file also requires at least two columns, including a column named by ```NAMESPACE``` in the input_parameters.txt to specify the compound IDs in the GEMs and another column flux to specify the maximum uptake flux for each culture medium component.
   
-# Simulation Parameters
+## Simulation Parameters
 
 1.Score the candidate reactions in the pool for their likelihood of being missing in the input GEMs (function predict() in main.py).
 
