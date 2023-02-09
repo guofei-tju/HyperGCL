@@ -39,3 +39,22 @@ For example,
 * The folder ```./data/yeast```  contains yaset dataset. 
 * The file ```./data/yeast/yeast_rxn_name_list.txt``` contains the reactions.
 * The file ```./data/yeast/yeast_meta_count.csv``` contains each metabolic's name, SMILES, and atom number.
+
+## Running the Experiment
+To run our model in yeast dataset, based on the default conditions, which set the ratio of positive and negative reactions as 1:1, imbalanced atom number, and the ratio of replaced atoms for negative reaction as 0.5:
+```bash
+$ python main.py
+```
+If you want to run our model based on different creating negative samples strategies, run the following script:
+```bash
+$ python main.py --train yeast --output ./output/ --create_negative True --balanced True --atom_ratio 0.5 --negative_ratio 2
+```
+<kbd>train</kbd> specifies the training dataset (For example, ```yeast``, ```uspto_3k``,  ```iMM904```, and so on).
+<kbd>output</kbd> specifies the path to store the model.
+<kbd>create_negative</kbd> specifies whether to create negative samples based on different conditions. If ```create_negative=False```, the model will run on the default train, valid, and test data, and when ```create_negative=Ture```, you need to set other parameters to create negative samples. 
+<kbd>balanced</kbd> specifies whether to replace metabolic based on balanced atom number.
+<kbd>atom_ratio</kbd> specifies the ratio of replaced atoms for negative reaction.
+<kbd>negative_ratio</kbd> specifies the ratio of negative reaction samples.
+
+Use the command python main.py -h to check the meaning of other parameters.
+
