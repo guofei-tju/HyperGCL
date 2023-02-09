@@ -80,7 +80,7 @@ This folder contains two files that are used for GEM simulations. Our algorithm 
 
 1.Score the candidate reactions in the pool for their likelihood of being missing in the input GEMs (function predict() in main.py).
 
-2. Among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs (function validate() in `main.py`). The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by `NUM_GAPFILLED_RXNS_TO_ADD` in the input_parameters.txt). If you only want the scores and rankings of candidate reactions, comment out validate() in main.py.
+2. Among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs (function validate() in `fba` folder's `main.py`). The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by `NUM_GAPFILLED_RXNS_TO_ADD` in the input_parameters.txt). If you only want the scores and rankings of candidate reactions, comment out validate() in `main.py`.
 
 All simulation parameters are defined in the `input_parameters.txt`:
 
