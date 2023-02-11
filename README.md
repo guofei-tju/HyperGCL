@@ -71,10 +71,10 @@ All input files should be stored in the data directory. This directory contains 
 This folder contains the GEMs that will be tested. Each GEM is saved as an XML file.
 
 ## data/pools
-This folder contains the reaction pool, named `universe.xml`. The pool is also a GEM with the `.xml` extension. If you wish to use your own pool, make sure to rename it to universe.xml and update the `EX_SUFFIX` and `NAMESPACE` parameters in the `input_parameters.txt` file to reflect the suffix of exchange reactions and the namespace of the biochemical reaction database being used.
+This folder contains the hypothetical reaction, named `universe.xml`. To use your own pool, rename it to `universe.xml and update the `EX_SUFFIX` and `NAMESPACE` parameters in the `input_parameters.txt` file.
 
 ## data/fermentation
-This folder contains two files that are used for GEM simulations. Our algorithm performs simulations on each pair of input and gap-filled GEMs, and if a positive phenotype is observed in the gap-filled GEM but not in the input GEM, the algorithm identifies and outputs the minimum number of reactions required to produce the phenotypic change. The file `substrate_exchange_reactions.csv` contains a list of fermentation compounds that will be searched for missing phenotypes in the input GEMs. This file requires at least two columns, including a column named `compound` that specifies the conventional compound names (e.g., sucrose) and a column named by the `NAMESPACE` specified in the input_parameters.txt file, which specifies the compound IDs (e.g., sucr) in the GEMs. If you wish to use your own list of fermentation compounds, make sure to rename the file to `substrate_exchange_reactions.csv`. Additionally, the file media.csv specifies the culture medium used to simulate the GEMs and requires at least two columns, including a column named by the `NAMESPACE` specified in the `input_parameters.txt` file, which specifies the compound IDs in the GEMs, and another column named flux that specifies the maximum uptake flux for each culture medium component.
+The file `substrate_exchange_reactions.csv` contains a list of fermentation compounds that will be searched for missing phenotypes in the input GEMs. Additionally, the file `media.csv` specifies the culture medium used to simulate the GEMs.
   
 ## Simulation Parameters
 All simulation parameters are defined in the `input_parameters.txt`.
