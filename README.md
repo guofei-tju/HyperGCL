@@ -77,9 +77,8 @@ This folder contains the reaction pool, named `universe.xml`. The pool is also a
 This folder contains two files that are used for GEM simulations. Our algorithm performs simulations on each pair of input and gap-filled GEMs, and if a positive phenotype is observed in the gap-filled GEM but not in the input GEM, the algorithm identifies and outputs the minimum number of reactions required to produce the phenotypic change. The file `substrate_exchange_reactions.csv` contains a list of fermentation compounds that will be searched for missing phenotypes in the input GEMs. This file requires at least two columns, including a column named `compound` that specifies the conventional compound names (e.g., sucrose) and a column named by the `NAMESPACE` specified in the input_parameters.txt file, which specifies the compound IDs (e.g., sucr) in the GEMs. If you wish to use your own list of fermentation compounds, make sure to rename the file to `substrate_exchange_reactions.csv`. Additionally, the file media.csv specifies the culture medium used to simulate the GEMs and requires at least two columns, including a column named by the `NAMESPACE` specified in the `input_parameters.txt` file, which specifies the compound IDs in the GEMs, and another column named flux that specifies the maximum uptake flux for each culture medium component.
   
 ## Simulation Parameters
-
-1.Score the candidate reactions in the pool for their likelihood of being missing in the input GEMs (function predict() in main.py).
-
-2. Among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs (function validate() in `fba` folder's `main.py`). The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by `NUM_GAPFILLED_RXNS_TO_ADD` in the input_parameters.txt). If you only want the scores and rankings of candidate reactions, comment out validate() in `main.py`.
-
 All simulation parameters are defined in the `input_parameters.txt`.
+
+1. Score the candidate reactions in the pool for their likelihood of being missing in the input GEMs (function `predict()` in `main.py`).
+
+2. Among the top candidate reactions with the highest likelihood, find out the minimum set that leads to new metabolic secretions that are potentially missing in the input GEMs (function validate() in `fba` folder's `main.py`). The second program is time-consuming if the number of top candidates added to the input GEMs for simulations is too large (this parameter is controlled by `NUM_GAPFILLED_RXNS_TO_ADD` in the `input_parameters.txt`). 
